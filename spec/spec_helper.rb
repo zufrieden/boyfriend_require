@@ -4,7 +4,7 @@ require "rubygems"
 require "bundler/setup"
 Bundler.require :test
 
-module Scoreboard
+module You
   @score = 0
 
   def self.incr
@@ -16,23 +16,23 @@ module Scoreboard
   end
 
   def self.engineer?
-    @engineer
-  end
-
-  def self.engineer=(bool)
-    @engineer = bool
+    @engineer ||= prompt("エンジニア or プログラマ")
   end
 end
 
 RSpec.configure do |conf|
 
-  def prompt(msg, required = false)
+  def question(msg, required = false)
     it msg do
-      puts "#{msg.gsub(/[?？]$/, "")}? (Y/n)"
-      answer = ["Y",""].include? gets.strip.upcase
+      answer = prompt(msg)
       answer.should be_true if required
-      Scoreboard.incr if answer
+      You.incr if answer
     end
+  end
+
+  def prompt(msg, required = false)
+    puts "#{msg.gsub(/[?？]$/, "")}? (Y/n)"
+    ["Y",""].include? gets.strip.upcase
   end
 
 end
