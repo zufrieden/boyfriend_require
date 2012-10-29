@@ -9,7 +9,7 @@ that I've decided to invite people to contact me here.
 Preferences
 ------------
 1. No smokers. (Required)
-1. No one whose personality changes when they drink. (Required)
+1. No one whose personality changes when they drink. (Not Required)
 1. Someone who has at least 5 friends from elementary school,
    high school, or university that they still keep in contact with.
 1. Someone who has professional relationships, which have lasted
